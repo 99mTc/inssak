@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Containers from "./Containers";
 import Footer from "./Footer";
 
@@ -38,9 +38,10 @@ const Header = () => {
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route
+          exact
           path="/"
           element={
             <>
@@ -50,11 +51,9 @@ function App() {
               <Footer />
             </>
           }
-        >
-          {/* <Route path="*" element={<NoPage />} /> */}
-        </Route>
+        />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
