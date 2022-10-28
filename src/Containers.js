@@ -1,20 +1,21 @@
-import React from 'react'
-import data from "./db/data"
+import React from "react";
+import data from "./db/data";
 
 const Containers = () => {
   const style = {
-    textAlign: "center"
-  }
+    textAlign: "center",
+  };
   const Title = () => {
     const title = {
-      color:"#fff",
-      fontSize:"20px",
-      fontWeight:"600",
+      color: "#fff",
+      fontSize: "20px",
+      fontWeight: "600",
       marginTop: "15%",
-      marginBottom: "5%"
-    }
-    return(
-        <h2 style={title}>🌱인싹에 진심인 사람들🌱</h2>
+      marginBottom: "5%",
+    };
+    return (
+      // eslint-disable-next-line
+      <h2 style={title}>🌱인싹에 진심인 사람들🌱</h2>
     );
   };
 
@@ -23,41 +24,39 @@ const Containers = () => {
       width: "16vw",
       margin: "2em 0.3em",
       display: "inline-block",
-      textAlign: "center"
-    }
+      textAlign: "center",
+    };
     const imageContainerStyle = {
       margin: 0,
       height: "15vw",
       overflow: "hidden",
-      backgroundColor:"#fff",
+      backgroundColor: "#fff",
       display: "flex",
-      justifyContent: "center"
-    }
+      justifyContent: "center",
+    };
     const imageStyle = {
       width: "inherit",
       height: "inherit",
-    }
+    };
     const titleStyle = {
       fontWeight: "bold",
       fontSize: "1em",
       margin: "0.5em 0 0.2em 0",
-      whiteSpace : "nowrap",
+      whiteSpace: "nowrap",
       overflow: "hidden",
-      textOverflow: "ellipsis"
-    }
-    const authorStyle ={
+      textOverflow: "ellipsis",
+    };
+    const authorStyle = {
       fontWeight: "bold",
       fontSize: "0.8em",
       whiteSpace: "nowrap",
       overflow: "hidden",
-      textOverflow: "ellipsis"
-    }
-    const contentData = 
-      data.map((item, index) =>{
-      return(
+      textOverflow: "ellipsis",
+    };
+    const contentData = data.map((item, index) => {
+      return (
         <div style={containerStyle} key={index}>
-          <div
-            style={imageContainerStyle}>
+          <div style={imageContainerStyle}>
             <img
               alt=""
               className="thumbimg"
@@ -69,18 +68,14 @@ const Containers = () => {
           <h6 style={authorStyle}>{item.author}</h6>
         </div>
       );
-      });
-      return(
-        contentData
-      );
+    });
+    return contentData;
   };
 
-  return(
-    
+  return (
     <div style={style}>
       <Title />
-      <Content/>
-      
+      <Content />
     </div>
   );
 };
