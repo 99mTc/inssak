@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Containers from "./Containers";
 import Footer from "./Footer";
 
@@ -38,22 +38,20 @@ const Header = () => {
 
 function App() {
   return (
-    <HashRouter basename={process.env.PUBLIC_URL}>
-      <Routes>
-        <Route
-          exact
-          path="/"
-          element={
-            <>
-              <Header />
-              <Main />
-              <Containers />
-              <Footer />
-            </>
-          }
-        />
-      </Routes>
-    </HashRouter>
+    <Routes>
+      <Route
+        exact
+        path="/"
+        element={
+          <>
+            <Header />
+            <Main />
+            <Containers />
+            <Footer />
+          </>
+        }
+      />
+    </Routes>
   );
 }
 
