@@ -1,21 +1,24 @@
 import Containers from "./Containers";
+import Footer from "./Footer";
 
 
 const Main = () => {
   const style = {
-    backgroundImage:"url('img/main.png')",
-    backgroundSize:"contain",
-    backgroundRepeat:"no-repeat",
-    height:"100vh",
+    width: "-moz-available",
     marginTop:"4vh"
   }
   return(
-    <div style={style} />
+    <div>
+      <img
+        alt=""
+        src={`${process.env.PUBLIC_URL}\\img\\main.png`}
+        style={style} />
+    </div>
   );
 };
 const Header = () => {
   const header = {
-    marginTop:"-0.9vw",
+    marginTop:"1%",
     position:"fixed"
   }
   const logo = {
@@ -26,30 +29,19 @@ const Header = () => {
   }
   return(
     <header style={header}>
-      <span onClick={"#"} style={logo}>SSAK展</span>
+      <span style={logo}>SSAK展</span>
     </header>
   );
 };
-const Title = () => {
-  const title = {
-    color:"#fff",
-    fontSize:"20px",
-    fontWeight:"600",
-    textAlign:"center",
-    marginTop:"36px"
-  }
-  return(
-      <h2 style={title}>🌱인싹에 진심인 사람들🌱</h2>
-  );
-};
+
 
 function App() {
   return (
     <>
       <Header />
       <Main />
-      <Title />
       <Containers />
+      <Footer />
     </>
   );
 }
