@@ -1,4 +1,5 @@
-function Footer (){
+import React from 'react'
+const Footer = () => {
     const style = {
         color: "white",
         textAlign: "center",
@@ -15,6 +16,6 @@ function Footer (){
             </span>
         </footer>
     );
-}
+};
 
 export default Footer;
